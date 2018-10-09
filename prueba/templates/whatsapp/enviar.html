@@ -1,0 +1,34 @@
+{% extends 'base/base.html' %}
+
+{% block header%}
+	<h4> EN ESTA VISTA SE ENVIA </h4>
+{% endblock %}
+
+{%block content %}
+
+<table class="table table-bordered">
+	<thead>
+		<tr>
+			<td>Telefono</td>		
+		</tr>
+	</thead>
+
+	<tbody>
+		{% if contactos %}
+		{% for contacto in contactos %}
+		<tr>
+			<td>{{contacto.telefono}}</td>
+
+		</tr>
+		{% endfor %}
+		{% else %}
+		<h1> No hay contactos</h1>
+
+		{% endif %}
+
+
+	</tbody>
+</table>
+
+{%endblock%}
+

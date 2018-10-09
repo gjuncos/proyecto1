@@ -1,0 +1,31 @@
+{% extends 'base/base.html' %}
+
+{%block content %}
+
+<table class="table table-bordered">
+	<thead>
+		<tr>
+			<td>Telefono</td>		
+		</tr>
+	</thead>
+
+	<tbody>
+		{% if contactos %}
+		{% for contacto in contactos %}
+		<tr>
+			<td>{{contacto.telefono}}</td>
+
+		</tr>
+		{% endfor %}
+		<a class="btn btn-primary" href="{% url 'enviar'%}"> Enviar </a>
+		{% else %}
+		<h1> No hay contactos</h1>
+
+		{% endif %}
+
+
+	</tbody>
+</table>
+
+{%endblock%}
+
